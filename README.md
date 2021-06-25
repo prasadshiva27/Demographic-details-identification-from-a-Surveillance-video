@@ -58,5 +58,6 @@ Below are the accuracy and oss while traiing the network.
 * [DeepSort](https://github.com/nwojke/deep_sort)
 * [Yolov4](https://github.com/hunglc007/tensorflow-yolov4-tflite)
 * [The AI Guy](https://www.youtube.com/watch?v=_zrNUzDS8Zc)
-* Architecture inspired from [this](https://ieeexplore.ieee.org/document/8944776) paper
+* Architecture inspired from [this](https://ieeexplore.ieee.org/document/8944776) paper.
+* Some ideas inpired from [this](https://github.com/LeonLok/Multi-Camera-Live-Object-Tracking) repo.
 
