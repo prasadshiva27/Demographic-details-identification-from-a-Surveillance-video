@@ -51,11 +51,12 @@ The training accuracy and test accuracy achieved for this is 82.53% and 78.42% r
 There is still room for improvising the noetwork with the more training and quality data.
 Below are the accuracy and oss while traiing the network.
 
-src="images/plot_acc.png"
- src="images/plot_loss.png"
-
 <img src="images/plot_acc.png" width="425"/> <img  src="images/plot_loss.png" width="425"/> 
 
-
-
+#### References
+* [PETA Dataset] (http://mmlab.ie.cuhk.edu.hk/projects/PETA.html)
+* [DeepSort](https://github.com/nwojke/deep_sort)
+* [Yolov4](https://github.com/hunglc007/tensorflow-yolov4-tflite)
+* [The AI Guy](https://www.youtube.com/watch?v=_zrNUzDS8Zc)
+* Architecture inspired from [this](https://ieeexplore.ieee.org/document/8944776) paper
 
