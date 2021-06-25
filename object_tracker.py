@@ -147,7 +147,7 @@ def main(_argv):
 
     frame_num = 0
 
-    # New Addition by Shiva
+    
     memory = {}
     total_counter = 0
     up_count = 0
@@ -169,9 +169,9 @@ def main(_argv):
             print('Video has ended or failed, try a different video format!')
             break
         # Masking the mirror in the video
-        pts = np.array([[0,123], [114,103], [124, 362], [15, 463], [0, 327]],np.int32)
-        pts = pts.reshape((-1, 1, 2))
-        cv2.fillPoly(frame, [pts],(255,255,255))
+        #pts = np.array([[0,123], [114,103], [124, 362], [15, 463], [0, 327]],np.int32)
+        #pts = pts.reshape((-1, 1, 2))
+        #cv2.fillPoly(frame, [pts],(255,255,255))
 
         frame_num +=1
         print('Frame #: ', frame_num)
@@ -273,7 +273,7 @@ def main(_argv):
         tracker.predict()
         tracker.update(detections)
 
-        # New Addition by Shiva
+        # Addition of Line in the middle of frame
         line = [(0, int(0.55 * frame.shape[0])), (int(frame.shape[1]), int(0.55 * frame.shape[0]))]
         # cv2.line(frame, line[0], line[1], (0, 255, 255), 2)
 
@@ -284,7 +284,7 @@ def main(_argv):
             bbox = track.to_tlbr()
             class_name = track.get_class()
 
-            # New Addition by Shiva
+            # Tracking midpoints
             midpoint = track.tlbr_midpoint(bbox)
             origin_midpoint = (midpoint[0], frame.shape[0] - midpoint[1])  # get midpoint respective to botton-left
 
@@ -317,7 +317,7 @@ def main(_argv):
                 if angle < 0:
                     down_count += 1
                     
-                    # New Addition by Shiva for cropping image
+                    # cropping image
                     xmin, ymin, xmax, ymax = bbox
                     cropped_img = frame[int(ymin):int(ymax), int(xmin):int(xmax)]
                     cropped_images.append(cropped_img)
@@ -334,7 +334,7 @@ def main(_argv):
                     print(k)
                     # croppedImages.append(cropped_img)
 
-            # New Addition by Shiva
+            
             # cv2.rectangle(frame, (int(bbox[0]), int(bbox[1])), (int(bbox[2]), int(bbox[3])), (255, 255, 255), 2)  # WHITE BOX
             # cv2.putText(frame, "ID: " + str(track.track_id), (int(bbox[0]), int(bbox[1])), 0,
             #                 1.5e-2 * frame.shape[0], (0, 255, 0), 4)
@@ -359,7 +359,7 @@ def main(_argv):
             #             1.5e-3 * frame.shape[0], (0, 255, 255), 8)
 
 
-            #Trying to paste the cropped image
+            # Paste the cropped image on to the frame
             if cropped_images:
               crop_start_w, crop_start_h = 5, int(frame.shape[0]) - int(2 * 0.1 * frame.shape[0])
               
